@@ -7,3 +7,7 @@
 <% elsif %>
 <%= "This task is not completed yet" %>
 <% end %>
+
+<p><%= link_to "Edit the task", task_edit_path(@task) %></p>
+
+<p><%= link_to "Back to list", tasks_path %></p>
