@@ -2,8 +2,16 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= link_to task.title, task_path(task) %></li>
+    <li>
+      <%= check_box_tag :completed,1 , task.completed %>
+      <%= link_to task.title , task_path(task), class: "list-title" %>
+      <%= link_to task_path(task), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fal fa-trash-alt"></i>
+      <% end %>
+
+    </li>
   <% end %>
 </ul>
 
-<p><%= link_to "Create a new task", tasks_new_path %></p>
+<p><i class="fas fa-plus"> </i><%= link_to "Create a new task", tasks_new_path %>
+</p>
