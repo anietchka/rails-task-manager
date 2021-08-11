@@ -3,7 +3,7 @@
 <ul>
   <% @tasks.each do |task| %>
     <li>
-      <%= check_box_tag :completed,1 , task.completed %>
+      <%= check_box_tag :completed,1 , task.completed, class:"checkbox" %>
       <%= link_to task.title , task_path(task), class: "list-title" %>
       <%= link_to task_path(task), method: :delete, data: { confirm: 'Are you sure?' } do %>
         <i class="fal fa-trash-alt"></i>
